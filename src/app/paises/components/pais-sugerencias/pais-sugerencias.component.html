@@ -1,0 +1,12 @@
+<ul class="list-group">
+    <li *ngFor="let pais of paisesSugeridos" 
+        class="list-group-item list-group-item-action">
+        <a [routerLink]="['pais', pais.cca2]" class="nav-link"> {{pais.name.common}} </a> 
+    </li>
+
+    <li *ngIf="paisesSugeridos.length != 0"
+        (click)="buscarSeleccionado()"
+        class="list-group-item list-group-item-action">
+         <a class="nav-link"> <strong>Buscar "{{termino}}"</strong> </a>
+    </li>
+</ul>
